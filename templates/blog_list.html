@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load markdown_deux_tags %}}
+{% block blog_list %}
+    <style>#blog_content > p > img{display:none;}
+    </style>
+<!-- 博文列表-->
+    <td valign="top">
+      {% for post in post_list %}
+        <center>
+        {% if flavour != "mobile" %}
+          <table style="border-color: #DDDDDD; border-style: solid; border-width: 1px; border-collapse: collapse" 
+cellpadding="6" bgcolor="#FFFFFF" width="500px" cellspacing="20">
+        {% else %}
+          <table style="border-color: #DDDDDD; border-style: solid; border-width: 1px; border-collapse: collapse" 
+cellpadding="6" bgcolor="#FFFFFF" width="100%" cellspacing="20">
+        {% endif%}
+            <tbody>
+              <tr>
+                <td>
+                    <a name="{{post.date_time}}">
+                    <center>
+                      <table border="0" cellspacing="0" width="100%" cellpadding="3">
+                        <tbody>
+                          <tr>
+                            <td bgcolor="#1e1e1e">
+                              <table width="100%" border="0">
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                      <b>
+                                      {% if flavour != "mobile"%}
+                                        <font size="2" color="#FFFFFF">{{post.title}}</font>
+                                      {% else %}
+                                         <font size="4" color="#FFFFFF">{{post.title}}</font>
+                                      {% endif %}                                   
+                                      </b>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <table cellpadding="5" width="100%" border="0">
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                    {% if flavour != "mobile"%}
+                                      <font color="#696969" id="blog_content">{{post.content | markdown | safe |truncatechars_html:200}}</font>
+                                    {% else %}
+                                       <font color="#696969" id="blog_content" size="7">{{post.content | markdown | safe |truncatechars_html:200}}</font>                                   
+                                    {% endif %}
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right">
+                                      <font size="2" color="Gray">{{post.date_time}}</font>
+                                      <a href="/{{post.id}}">阅读更多</a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </center>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </center>
+        <br>
+      {% endfor %}
+</td>
+{% include "left_list.html" %}
+{% endblock blog_list %}

@@ -1,0 +1,68 @@
+<!-- 右侧标签栏 --> -->
+{% if flavour != "mobile" %}
+<td valign="top" width="210" align="right" style="opacity: 0.9;">
+  <table width="90%" cellpadding="1" border="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td>
+          <table cellpadding="3" width="100%" bgcolor="#FFFFFF">
+            <tr>
+              <td bgcolor="#1e1e1e">
+                <font style="font-size: 9pt;" color="#DDDDDD">近期文章列表</font>
+              </td>
+            </tr>
+            {% for a in post_list %}
+              <tr>
+                <td>
+                    <script>
+                        var m_url = function(){return "http://"+window.location.host+"/";}
+                        document.write('<a href='+m_url()+'{{a.id}}>');
+                    </script>
+                    <font style="font-size: 10pt;" color="#3A3A">{{a.title}}</font>
+                  </a>
+                </td>
+              </tr>
+            {% endfor %}
+          </table>
+          <table cellpadding="3" width="100%" bgcolor="#FFFFFF">
+            <tbody>
+              <tr>
+                <td bgcolor="#1e1e1e">
+                  <font style="font-size: 9pt;" color="#DDDDDD">文章标签</font>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">
+                  {% for post in post_list %}
+                    <a href="{{user_url}}/{{post.id}}/">
+                      <font style="font-size: 9pt;" color="#3A3A">{{post.category}}</font>
+                    </a>
+                    <br>
+                  {% endfor %}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table cellpadding="3" width="100%" bgcolor="#FFFFFF">
+            <tr>
+              <td bgcolor="#1e1e1e">
+                <font style="font-size: 9pt;" color="#DDDDDD">近期阅读</font>ont>
+              </td>
+            </tr>
+            {% for a in book_list %}
+              <tr>
+                <td>
+                  <a href="{{a.url}}">
+                    <font style="font-size: 10pt;" color="#3A3A">{{a.title}}</font>
+                  </a>
+                </td>
+              </tr>
+            {% endfor %}
+          </table>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=400 src="http://music.163.com/outchain/player?type=0&id=142139719&auto=1&height=430"></iframe>
+        </td>
+     </tr>
+    </tbody>
+  </table>
+</td>
+{% endif %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>weakiwi's blog</title>
+  <link rel="stylesheet" type="text/css" href="/static/index.css">
+  <script src="/static/jquery.js"></script>
+  <script src="/static/showdown.js"></script>
+  <script src="/static/av-min-1.2.1.js"></script>
+  <script src="/static/highlight.min.js"></script>
+  <link href="/static/monokai_sublime.min.css" rel="stylesheet">
+  <script>//highlight the code
+      function highlight_the_code(){
+      $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+      });
+  }
+  </script>
+</head>
+<body>
+<!-- 中间的博客正文 -->
+<center>
+<table width="750" border="0" cellpadding="0" cellspacing="20">>
+<tr>
+<tbody>
+{% block blog_list %}
+{% endblock %}
+</tbody>
+</tr>
+</table>
+</center>
+<div align="right">
+<a href="http://github.com/weakiwi" >weakiwi</a>
+</div>
+<!-- 左侧标签和日期分类 -->
+<td valign="top" width="210" align="left">
+  <table width="90%" cellpadding="1" border="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td>
+          <table cellpadding="3" width="100%">
+          </table>
+          <table cellpadding="3" width="100%">
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</td>
+</body>
+</html>
+

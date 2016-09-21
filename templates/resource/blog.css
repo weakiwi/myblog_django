@@ -1,0 +1,6 @@
+body{background-color:#f9f9f5;padding:0;border:0}
+body{font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;font-size:14px;line-height:1.42857143}
+textarea{height:95%;width:49%;display:inline;whit-space:nowrap;float:left;}
+textarea{font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;font-size:18px;line-height:1.42857143;}
+#counter{font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;font-size:18px;line-height:1.42857143}
+#send{background:red;color:#fff;width:150px;height:30px;font:14px Verdana,Arial,Helvetica,sans-serif}

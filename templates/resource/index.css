@@ -1,0 +1,23 @@
+#Layer1
+{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+*
+{
+  margin:0;
+  padding:0
+}
+img{
+  border:none
+}
+center{
+}
+body
+{ 
+  background-image: url(/medias/cowboy.jpg);
+  background-repeat: repeat;
+  opacity: 0.9
+
